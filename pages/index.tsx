@@ -161,7 +161,8 @@ const Home: NextPage = () => {
           </Text>
           <Box
             p={6}
-            w="343px"
+            w="calc(100% - 48px)"
+            left="24px"
             backgroundColor="white"
             backgroundImage='url("/box-background.png")'
             borderRadius="8px"
