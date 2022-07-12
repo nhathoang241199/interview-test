@@ -20,24 +20,23 @@ const Product = ({ product }: IProps) => {
       border="1px solid #F1F1F5"
       boxShadow="0px 12px 18px rgba(23, 23, 37, 0.04)"
       borderRadius="4px"
+      overflow="hidden"
       flexShrink={0}
       mr={6}
     >
-      <Box w="full" h={98}>
-        <Image objectFit="cover" w="full" h={98} src={banner} alt="banner" />
-      </Box>
+      <Image h={98} src={banner} alt="banner" />
       <Box p={4}>
         {isInsufficient ? (
           <Flex mb={2} alignItems="center">
             <Box mr={1}>
               <Image src="/limitCoin.png" alt="limitCoin" />
             </Box>
-            <Text fontWeight={600} color="#696974">
+            <Text sx={coinPrice} color="#696974">
               {price} Coins
             </Text>
           </Flex>
         ) : (
-          <Text mb={2} fontWeight={600} color="primary">
+          <Text sx={coinPrice} mb={2} color="primary">
             {price} Coins
           </Text>
         )}
@@ -45,7 +44,12 @@ const Product = ({ product }: IProps) => {
         <Text sx={textStyled}>{content}</Text>
         {isInsufficient && (
           <Link href="#">
-            <Text sx={{ ...textStyled, color: "primary" }}>
+            <Text
+              fontWeight={400}
+              fontSize="16px"
+              lineHeight="20px"
+              color="primary"
+            >
               Insufficient coins
             </Text>
           </Link>
@@ -56,3 +60,9 @@ const Product = ({ product }: IProps) => {
 };
 
 export default Product;
+
+const coinPrice = {
+  fontSize: "16px",
+  lineHeight: "24px",
+  fontWeight: 600,
+};

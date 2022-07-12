@@ -15,7 +15,7 @@ interface IProducts {
 const Products = ({ title, products }: IProducts) => {
   return (
     <Flex direction="column">
-      <Text mt={12} mb={6} fontWeight={600} fontSize="18px">
+      <Text mt={12} mb={6} lineHeight="24px" fontWeight={600} fontSize="18px">
         {title}
       </Text>
       <Flex
