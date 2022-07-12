@@ -26,7 +26,7 @@ const Product = ({ product }: IProps) => {
       mr={6}
     >
       <Image h={98} src={banner} alt="banner" />
-      <Box p={4} h="full">
+      <Box p={4}>
         {isInsufficient ? (
           <Flex mb={2} alignItems="center">
             <Box mr={1}>
