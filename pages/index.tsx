@@ -15,6 +15,8 @@ import Products from "./components/Products";
 import Head from "next/head";
 
 import { extendTheme } from "@chakra-ui/react";
+import "@fontsource/montserrat/400.css";
+import "@fontsource/montserrat/700.css";
 
 const theme = extendTheme({
   fonts: {
@@ -145,21 +147,18 @@ const Home: NextPage = () => {
           <Box
             p={6}
             w="343px"
-            bg="white"
+            backgroundColor="white"
+            backgroundImage='url("/box-background.png")'
             borderRadius="8px"
             boxShadow="0px 12px 18px rgba(23, 23, 37, 0.04)"
-            h="416px"
             position="absolute"
             top="216px"
           >
-            <Text zIndex={2} fontSize="14px" color="text">
+            <Text fontSize="14px" color="text">
               Available Coin balance
             </Text>
-            <Heading zIndex={2} sx={numberHeading}>
-              340
-            </Heading>
+            <Heading sx={numberHeading}>340</Heading>
             <Progress
-              zIndex={2}
               my={8}
               value={60}
               size="sm"
@@ -167,13 +166,12 @@ const Home: NextPage = () => {
               borderRadius="2.5px"
             />
 
-            <Text zIndex={2} w="278px" sx={textStyled}>
+            <Text w="278px" sx={textStyled}>
               You have paid rental fee for $1,200. Pay more $800 to achieve Gold
               Tier.
             </Text>
-
-            <Flex zIndex={2} mt={4} mb={6} alignItems="center">
-              <Link href="#">
+            <Link href="#">
+              <Flex mt={4} mb={6} alignItems="center">
                 <Text
                   sx={{
                     color: "primary",
@@ -182,32 +180,16 @@ const Home: NextPage = () => {
                 >
                   View tier benefits
                 </Text>
-              </Link>
-              <ChevronRightIcon color="primary" boxSize={6} />
-            </Flex>
+                <ChevronRightIcon color="primary" boxSize={6} />
+              </Flex>
+            </Link>
 
-            <Button
-              zIndex={2}
-              mb={4}
-              w="full"
-              h="60px"
-              bg="#171725"
-              colorScheme="blue"
-            >
+            <Button mb={4} w="full" h="60px" bg="#171725" colorScheme="blue">
               My Coupons
             </Button>
-            <Text zIndex={2} fontSize="sm" color="#B5B5BE" textAlign="center">
+            <Text fontSize="sm" color="#B5B5BE" textAlign="center">
               Updated : 02/11/2021
             </Text>
-
-            <Box
-              position="absolute"
-              top={0}
-              left={0}
-              w="343px"
-              h="416px"
-              bg='url("/box-background.png")'
-            />
           </Box>
         </Box>
         <Box mt="208px" p={6} bg="white" h="1000px">
