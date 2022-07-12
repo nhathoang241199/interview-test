@@ -228,7 +228,7 @@ const Home: NextPage = () => {
             </Text>
           </Box>
         </Box>
-        <Box mb="120px" mt="160px" p={6} bg="white" h="1000px">
+        <Box mb="120px" mt="200px" p={6} bg="white" h="1000px">
           {productList?.map((e, index) => (
             <Products key={index} title={e.title} products={e.products} />
           ))}
@@ -244,21 +244,29 @@ const Home: NextPage = () => {
           borderTop="2px solid #E2E2EA"
           justifyContent="space-between"
         >
-          <Image src="/home-icon.png" alt="home icon" />
-          <Box position="relative">
-            <Image src="/noti-icon.png" alt="noti icon" />
-            <Box
-              position="absolute"
-              top="4px"
-              right="4px"
-              w="12px"
-              h="12px"
-              borderRadius="50%"
-              bg="#FC5A5A"
-            />
-          </Box>
-          <Image src="/news-icon.png" alt="news icon" />
-          <Image src="/profile-icon.png" alt="profile icon" />
+          <Button bg="transparent">
+            <Image src="/home-icon.png" alt="home icon" />
+          </Button>
+          <Button bg="transparent">
+            <Box position="relative">
+              <Image src="/noti-icon.png" alt="noti icon" />
+              <Box
+                position="absolute"
+                top="4px"
+                right="4px"
+                w="12px"
+                h="12px"
+                borderRadius="50%"
+                bg="#FC5A5A"
+              />
+            </Box>
+          </Button>
+          <Button bg="transparent">
+            <Image src="/news-icon.png" alt="news icon" />
+          </Button>
+          <Button bg="transparent">
+            <Image src="/profile-icon.png" alt="profile icon" />
+          </Button>
         </Flex>
       </Box>
     </ChakraProvider>

@@ -17,15 +17,16 @@ const Product = ({ product }: IProps) => {
   return (
     <Box
       w={200}
+      minHeight={240}
       border="1px solid #F1F1F5"
-      boxShadow="0px 12px 18px rgba(23, 23, 37, 0.04)"
       borderRadius="4px"
       overflow="hidden"
+      boxShadow="0px 12px 18px rgba(23, 23, 37, 0.04)"
       flexShrink={0}
       mr={6}
     >
       <Image h={98} src={banner} alt="banner" />
-      <Box p={4}>
+      <Box p={4} h="full">
         {isInsufficient ? (
           <Flex mb={2} alignItems="center">
             <Box mr={1}>

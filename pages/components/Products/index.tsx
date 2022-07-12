@@ -15,11 +15,13 @@ interface IProducts {
 const Products = ({ title, products }: IProducts) => {
   return (
     <Flex direction="column">
-      <Text mt={12} mb={6} lineHeight="24px" fontWeight={600} fontSize="18px">
+      <Text lineHeight="24px" fontWeight={600} fontSize="18px">
         {title}
       </Text>
       <Flex
         sx={{
+          pb: 12,
+          pt: 6,
           overflowX: "auto",
           maxW: "full",
         }}
