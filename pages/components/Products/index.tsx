@@ -1,5 +1,6 @@
-import { Box, Flex, HStack, Text } from "@chakra-ui/react";
+import { Flex, Text } from "@chakra-ui/react";
 import Product from "../Product";
+import React from "react";
 
 export interface IProduct {
   banner: string;
@@ -23,9 +24,11 @@ const Products = ({ title, products }: IProducts) => {
           maxW: "full",
         }}
       >
-        {products.map((product, index) => (
-          <Product product={product} key={index} />
-        ))}
+        {React.Children.toArray(
+          products?.map((product) => {
+            if (product) return <Product product={product} />;
+          })
+        )}
       </Flex>
     </Flex>
   );

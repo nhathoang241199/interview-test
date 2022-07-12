@@ -23,91 +23,93 @@ const theme = extendTheme({
   },
   colors: {
     primary: "#0062FF",
+    text: "#B5B5BE",
     brand: {
       500: "#0062FF",
     },
   },
 });
 
-const productList = [
-  {
-    title: "Petrol",
-    products: [
-      {
-        banner: "/banner1.png",
-        price: 5,
-        content: "50% discount for every $100 top-up on your Shell Petrol Card",
-      },
-      {
-        banner: "/banner2.png",
-        price: 1000,
-        content: "70% discount top-up on your Shell Petrol Card",
-      },
-      {
-        banner: "/banner1.png",
-        price: 5,
-        content: "50% discount for every $100 top-up on your Shell Petrol Card",
-      },
-      {
-        banner: "/banner2.png",
-        price: 1000,
-        content: "70% discount top-up on your Shell Petrol Card",
-      },
-    ],
-  },
-  {
-    title: "Rental Rebate",
-    products: [
-      {
-        banner: "/banner3.png",
-        price: 20,
-        content: "Get $20 Rental rebate",
-      },
-      {
-        banner: "/banner4.png",
-        price: 15,
-        content: "Get $500 Rental rebate",
-      },
-      {
-        banner: "/banner3.png",
-        price: 20,
-        content: "Get $20 Rental rebate",
-      },
-      {
-        banner: "/banner4.png",
-        price: 15,
-        content: "Get $500 Rental rebate",
-      },
-    ],
-  },
-  {
-    title: "Food and Beverage",
-    products: [
-      {
-        banner: "/banner5.png",
-        price: 25,
-        content: "NTUC Fairprice $50 Voucher",
-      },
-      {
-        banner: "/banner6.png",
-        price: 5,
-        content: "Free Cold Stone Sundae at any flavour!",
-      },
-      {
-        banner: "/banner5.png",
-        price: 25,
-        content: "NTUC Fairprice $50 Voucher",
-      },
-      {
-        banner: "/banner6.png",
-        price: 5,
-        content: "Free Cold Stone Sundae at any flavour!",
-      },
-    ],
-  },
-];
-
 const Home: NextPage = () => {
+  const productList = [
+    {
+      title: "Petrol",
+      products: [
+        {
+          banner: "/banner1.png",
+          price: 5,
+          content:
+            "50% discount for every $100 top-up on your Shell Petrol Card",
+        },
+        {
+          banner: "/banner2.png",
+          price: 1000,
+          content: "70% discount top-up on your Shell Petrol Card",
+        },
+        {
+          banner: "/banner1.png",
+          price: 5,
+          content:
+            "50% discount for every $100 top-up on your Shell Petrol Card",
+        },
+        {
+          banner: "/banner2.png",
+          price: 1000,
+          content: "70% discount top-up on your Shell Petrol Card",
+        },
+      ],
+    },
+    {
+      title: "Rental Rebate",
+      products: [
+        {
+          banner: "/banner3.png",
+          price: 20,
+          content: "Get $20 Rental rebate",
+        },
+        {
+          banner: "/banner4.png",
+          price: 15,
+          content: "Get $500 Rental rebate",
+        },
+        {
+          banner: "/banner3.png",
+          price: 20,
+          content: "Get $20 Rental rebate",
+        },
+        {
+          banner: "/banner4.png",
+          price: 15,
+          content: "Get $500 Rental rebate",
+        },
+      ],
+    },
+    {
+      title: "Food and Beverage",
+      products: [
+        {
+          banner: "/banner5.png",
+          price: 25,
+          content: "NTUC Fairprice $50 Voucher",
+        },
+        {
+          banner: "/banner6.png",
+          price: 5,
+          content: "Free Cold Stone Sundae at any flavour!",
+        },
+        {
+          banner: "/banner5.png",
+          price: 25,
+          content: "NTUC Fairprice $50 Voucher",
+        },
+        {
+          banner: "/banner6.png",
+          price: 5,
+          content: "Free Cold Stone Sundae at any flavour!",
+        },
+      ],
+    },
+  ];
   return (
     <ChakraProvider theme={theme}>
       <Box>
@@ -131,7 +133,7 @@ const Home: NextPage = () => {
             lineHeight="40px"
             fontWeight={600}
             margin={0}
-            fontSize="lg"
+            fontSize="32px"
             color="white"
           >
             Silver Tier
@@ -150,22 +152,27 @@ const Home: NextPage = () => {
             position="absolute"
             top="216px"
           >
-            <Text sx={textStyled}>Available Coin balance</Text>
-            <Heading sx={numberHeading}>340</Heading>
+            <Text zIndex={2} fontSize="14px" color="text">
+              Available Coin balance
+            </Text>
+            <Heading zIndex={2} sx={numberHeading}>
+              340
+            </Heading>
             <Progress
+              zIndex={2}
               my={8}
-              value={80}
+              value={60}
               size="sm"
               colorScheme="brand"
               borderRadius="2.5px"
             />
 
-            <Text w="278px" sx={textStyled}>
+            <Text zIndex={2} w="278px" sx={textStyled}>
               You have paid rental fee for $1,200. Pay more $800 to achieve Gold
               Tier.
             </Text>
 
-            <Flex mt={4} mb={6} alignItems="center">
+            <Flex zIndex={2} mt={4} mb={6} alignItems="center">
               <Link href="#">
                 <Text
                   sx={{
@@ -179,25 +186,32 @@ const Home: NextPage = () => {
               <ChevronRightIcon color="primary" boxSize={6} />
             </Flex>
 
-            <Button mb={4} w="full" h="60px" bg="#171725" colorScheme="blue">
+            <Button
+              zIndex={2}
+              mb={4}
+              w="full"
+              h="60px"
+              bg="#171725"
+              colorScheme="blue"
+            >
               My Coupons
             </Button>
-            <Text fontSize="sm" color="#B5B5BE" textAlign="center">
+            <Text zIndex={2} fontSize="sm" color="#B5B5BE" textAlign="center">
               Updated : 02/11/2021
             </Text>
 
-            {/* <Box
-            position="absolute"
-            top={0}
-            left={0}
-            w="343px"
-            h="416px"
-            bg='url("/box-background.png")'
-          /> */}
+            <Box
+              position="absolute"
+              top={0}
+              left={0}
+              w="343px"
+              h="416px"
+              bg='url("/box-background.png")'
+            />
           </Box>
         </Box>
         <Box mt="208px" p={6} bg="white" h="1000px">
-          {productList.map((e, index) => (
+          {productList?.map((e, index) => (
             <Products key={index} title={e.title} products={e.products} />
           ))}
         </Box>

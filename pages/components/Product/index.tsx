@@ -1,13 +1,17 @@
+import React from "react";
 import { IProduct } from "../Products";
 import { Box, Text, Image, Flex, Link } from "@chakra-ui/react";
 import { textStyled } from "../..";
 interface IProps {
   product: IProduct;
-  key: number;
 }
 
-const Product: React.FC<IProps> = ({ product, key }) => {
-  const { price, banner, content } = product;
+const Product = ({ product }: IProps) => {
+  const { price, banner, content } = product || {
+    price: 0,
+    banner: "",
+    content: "",
+  };
   const userBallance = 200;
   const isInsufficient = userBallance < price;
   return (
@@ -16,7 +20,6 @@ const Product: React.FC<IProps> = ({ product, key }) => {
       border="1px solid #F1F1F5"
       boxShadow="0px 12px 18px rgba(23, 23, 37, 0.04)"
       borderRadius="4px"
-      key={key}
       flexShrink={0}
       mr={6}
     >
