@@ -152,8 +152,8 @@ const Home: NextPage = () => {
           />
           <Heading
             as={motion.h2}
-            initial={{ x: -50 }}
-            animate={{ x: 0 }}
+            initial={{ y: -50 }}
+            animate={{ y: 0 }}
             transition={{ ease: "easeOut" }}
             lineHeight="40px"
             fontWeight={600}
@@ -166,8 +166,8 @@ const Home: NextPage = () => {
           </Heading>
           <Text
             as={motion.p}
-            initial={{ x: 100 }}
-            animate={{ x: 0 }}
+            initial={{ y: 100 }}
+            animate={{ y: 0 }}
             transition={{ ease: "easeOut" }}
             sx={textStyled}
           >
@@ -254,9 +254,8 @@ const Home: NextPage = () => {
         </Box>
         <Flex
           as={motion.div}
-          initial={{ y: 200, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ ease: "easeOut" }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           position="fixed"
           bottom={0}
           left={0}
