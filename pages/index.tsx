@@ -254,8 +254,8 @@ const Home: NextPage = () => {
         </Box>
         <Flex
           as={motion.div}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          initial={{ y: 90 }}
+          animate={{ y: 0 }}
           position="fixed"
           bottom={0}
           left={0}
