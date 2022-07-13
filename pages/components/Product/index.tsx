@@ -2,6 +2,7 @@ import React from "react";
 import { IProduct } from "../Products";
 import { Box, Text, Image, Flex, Link } from "@chakra-ui/react";
 import { textStyled } from "../..";
+import { motion } from "framer-motion";
 interface IProps {
   product: IProduct;
 }
@@ -16,6 +17,10 @@ const Product = ({ product }: IProps) => {
   const isInsufficient = userBallance < price;
   return (
     <Box
+      as={motion.div}
+      initial={{ y: 200, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ ease: "easeOut" }}
       w={200}
       minHeight={240}
       border="1px solid #F1F1F5"

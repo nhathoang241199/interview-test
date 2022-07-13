@@ -1,6 +1,7 @@
 import { Flex, Text } from "@chakra-ui/react";
 import Product from "../Product";
 import React from "react";
+import { motion } from "framer-motion";
 
 export interface IProduct {
   banner: string;
@@ -15,7 +16,15 @@ interface IProducts {
 const Products = ({ title, products }: IProducts) => {
   return (
     <Flex direction="column">
-      <Text lineHeight="24px" fontWeight={600} fontSize="18px">
+      <Text
+        as={motion.p}
+        initial={{ x: -50 }}
+        animate={{ x: 0 }}
+        transition={{ ease: "easeOut" }}
+        lineHeight="24px"
+        fontWeight={600}
+        fontSize="18px"
+      >
         {title}
       </Text>
       <Flex

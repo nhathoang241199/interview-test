@@ -17,6 +17,7 @@ import Head from "next/head";
 
 import { extendTheme } from "@chakra-ui/react";
 import { Global } from "@emotion/react";
+import { motion } from "framer-motion";
 
 const Fonts = () => (
   <Global
@@ -136,6 +137,10 @@ const Home: NextPage = () => {
         </Head>
         <Box position="relative" p={6} bg="#171725" h="428px">
           <IconButton
+            as={motion.button}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ ease: "easeOut" }}
             bg="white"
             borderRadius="50%"
             border="none"
@@ -146,6 +151,10 @@ const Home: NextPage = () => {
             icon={<ChevronLeftIcon boxSize={6} />}
           />
           <Heading
+            as={motion.h2}
+            initial={{ x: -50 }}
+            animate={{ x: 0 }}
+            transition={{ ease: "easeOut" }}
             lineHeight="40px"
             fontWeight={600}
             margin={0}
@@ -155,11 +164,21 @@ const Home: NextPage = () => {
           >
             Silver Tier
           </Heading>
-          <Text sx={textStyled}>
+          <Text
+            as={motion.p}
+            initial={{ x: 100 }}
+            animate={{ x: 0 }}
+            transition={{ ease: "easeOut" }}
+            sx={textStyled}
+          >
             In Silver Tier, every $1 in rental fee paid, you get 2 coins to
             redeem exclusive rewards.
           </Text>
           <Box
+            as={motion.div}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ ease: "easeOut" }}
             p={6}
             w="calc(100% - 48px)"
             left="24px"
@@ -234,6 +253,10 @@ const Home: NextPage = () => {
           ))}
         </Box>
         <Flex
+          as={motion.div}
+          initial={{ y: 200, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ ease: "easeOut" }}
           position="fixed"
           bottom={0}
           left={0}
